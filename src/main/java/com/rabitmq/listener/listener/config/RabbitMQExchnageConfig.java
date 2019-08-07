@@ -32,4 +32,13 @@ public class RabbitMQExchnageConfig {
                 .internal()
                 .build();
     }
+
+    @Bean
+    Exchange fanEx() {
+        return ExchangeBuilder.fanoutExchange("FanoutExchange")
+                .autoDelete()
+                .internal()
+                .durable(true)
+                .build();
+    }
 }
