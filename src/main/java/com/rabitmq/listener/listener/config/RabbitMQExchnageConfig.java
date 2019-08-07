@@ -23,4 +23,13 @@ public class RabbitMQExchnageConfig {
                 .internal()
                 .build();
     }
+
+    @Bean
+    Exchange newEx() {
+        return ExchangeBuilder.topicExchange("TopicTextExchange")
+                .autoDelete()
+                .durable(true)
+                .internal()
+                .build();
+    }
 }
